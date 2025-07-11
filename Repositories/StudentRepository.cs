@@ -3,13 +3,11 @@ using FirstApp.Models;
 
 namespace FirstApp.Repositories
 {
-	public class StudentRepository
+	public static class StudentRepository
 	{
-		public StudentRepository()
-		{
-		}
+		
 
-		List<Student> students = new List<Student>
+		static List<Student> students = new List<Student>
 		{
 			new Student{
 
