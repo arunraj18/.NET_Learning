@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace FirstApp.Models
 {
 	public class Course
