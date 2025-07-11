@@ -1,14 +1,59 @@
-﻿using FirstApp.Models;
-using FirstApp.Repositories;
-using Microsoft.AspNetCore.Http;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using FirstApp.Repositories;
+using FirstApp.Models;
 
 namespace FirstApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class StudentsController : Controller
     {
+        // GET: api/values
+        [HttpGet]
+        public ActionResult<IEnumerable<Student>> Get()
+        {
+            return Ok(StudentRepository.students);
+        }
+
+        // GET api/values/5
+        [HttpGet("{id:int}")]
+        public ActionResult<Student> Get(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+            var stu = StudentRepository.students.Where(n => n.Id == id).FirstOrDefault();
+
+            if (stu == null)
+            {
+                return NotFound();
+            }
+            return Ok(stu);
+        }
+
+        // POST api/values
+        [HttpPost]
+        public ActionResult<Student> Create([FromBody] Student student)
+        {
+            if (student == null)
+                return BadRequest();
+
+            int newId = StudentRepository.students.LastOrDefault().Id + 1;
+            Student stu = new Student
+            {
+                Id = newId,
+                Name = student.Name,
+                Email = student.Email,
+                EnrollmentDate = DateTime.Now
+            };
+            StudentRepository.students.Add(stu);
+            student.Id = stu.Id;
+            return Ok(student);
+        }
 
         [HttpPut]
         public IActionResult UpdateStudents([FromBody] Student student) {
@@ -43,7 +88,6 @@ namespace FirstApp.Controllers
             }
             StudentRepository.students.Remove(currStudent);
             return NoContent();
-
-        }
-    }
+      }
+  }
 }

@@ -29,4 +29,7 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="Controllers\StudentsController.cs" />
+  </ItemGroup>
 </Project>
