@@ -8,6 +8,7 @@
                 CourseId = 1,
                 CourseName = "Maths",
             }
+        };
 
 
     }
