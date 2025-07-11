@@ -17,7 +17,6 @@ namespace FirstApp.Controllers
                 return BadRequest();
             }
             var currStudent = StudentRepository.students.Where(s => s.Id == student.Id).FirstOrDefault();
-            StudentRepository.students.Remove(currStudent);
             if (currStudent == null)
             {
                 return NotFound();
@@ -26,7 +25,6 @@ namespace FirstApp.Controllers
             currStudent.Name = student.Name;
             currStudent.Email = student.Email;
             currStudent.EnrollmentDate = student.EnrollmentDate;
-            StudentRepository.students.Add(currStudent);
             return Ok();
         
         
