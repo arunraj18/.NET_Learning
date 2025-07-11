@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\apeddhala\\source\\repos\\FirstApp\\FirstApp.csproj": {}
+    "C:\\Users\\apeddhala\\source\\repos\\arunraj18\\.NET_Learning\\FirstApp\\FirstApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\apeddhala\\source\\repos\\FirstApp\\FirstApp.csproj": {
+    "C:\\Users\\apeddhala\\source\\repos\\arunraj18\\.NET_Learning\\FirstApp\\FirstApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\apeddhala\\source\\repos\\FirstApp\\FirstApp.csproj",
+        "projectUniqueName": "C:\\Users\\apeddhala\\source\\repos\\arunraj18\\.NET_Learning\\FirstApp\\FirstApp.csproj",
         "projectName": "FirstApp",
-        "projectPath": "C:\\Users\\apeddhala\\source\\repos\\FirstApp\\FirstApp.csproj",
+        "projectPath": "C:\\Users\\apeddhala\\source\\repos\\arunraj18\\.NET_Learning\\FirstApp\\FirstApp.csproj",
         "packagesPath": "C:\\Users\\apeddhala\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\apeddhala\\source\\repos\\FirstApp\\obj\\",
+        "outputPath": "C:\\Users\\apeddhala\\source\\repos\\arunraj18\\.NET_Learning\\FirstApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
