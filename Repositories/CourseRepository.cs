@@ -6,7 +6,7 @@ namespace FirstApp.Repositories
     public static class CourseRepository
     {
         
-        static List<Course> courses = new List<Course>
+        public static List<Course> courses = new List<Course>
         {
             new Course{
 

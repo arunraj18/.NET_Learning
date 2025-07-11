@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,11 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using FirstApp.Repositories;
 using FirstApp.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace FirstApp.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class StudentsController : Controller
     {
         // GET: api/values
@@ -55,17 +55,39 @@ namespace FirstApp.Controllers
             return Ok(student);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
+        [HttpPut]
+        public IActionResult UpdateStudents([FromBody] Student student) {
+            if (student == null || student.Id <= 0)
+            {
+                return BadRequest();
+            }
+            var currStudent = StudentRepository.students.Where(s => s.Id == student.Id).FirstOrDefault();
+            if (currStudent == null)
+            {
+                return NotFound();
+            }
+            currStudent.Id = student.Id;
+            currStudent.Name = student.Name;
+            currStudent.Email = student.Email;
+            currStudent.EnrollmentDate = student.EnrollmentDate;
+            return Ok();
+        
+        
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{Id}")]
+        public IActionResult DeleteStudent(int studentId)
         {
-        }
-    }
+            if (studentId <= 0) {
+                return BadRequest();
+            }
+            var currStudent = StudentRepository.students.Where(s => s.Id == studentId).FirstOrDefault();
+            if (currStudent == null)
+            {
+                return NotFound();
+            }
+            StudentRepository.students.Remove(currStudent);
+            return NoContent();
+      }
+  }
 }
-
