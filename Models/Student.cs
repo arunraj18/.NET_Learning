@@ -1,23 +1,22 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 namespace FirstApp.Models
 {
 	public class Student
 	{
 		
-			private int Id { get; set; }
+			public int Id { get; set; }
 
             [Required]
             [StringLength(30)]
-            private string Name { get; set; }
+            public string Name { get; set; }
 
             [EmailAddress]
-            private string Email { get; set; }
+            public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Date)]
-            private DateTime EnrollmentDate { get; set; }
+            public DateTime EnrollmentDate { get; set; }
 
 
     }
