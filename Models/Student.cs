@@ -9,10 +9,10 @@ namespace FirstApp.Models
 
             [Required]
             [StringLength(30)]
-            public string Name { get; set; }
+            public string  Name { get; set; }
 
             [EmailAddress]
-            public string Email { get; set; }
+            public string  Email { get; set; }
 
             [Required]
             [DataType(DataType.Date)]
