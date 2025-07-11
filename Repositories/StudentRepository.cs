@@ -7,7 +7,7 @@ namespace FirstApp.Repositories
 	{
 		
 
-		static List<Student> students = new List<Student>
+		public static List<Student> students = new List<Student>
 		{
 			new Student{
 
